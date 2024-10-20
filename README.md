@@ -1,8 +1,10 @@
 # MD-LMD-Classifier
 The following libraries are needed:    
-    1. robustbase: for MCD,
-    2. RobStatTM: for MVE
-    3. gam,VGAM : For gam fitting
+1. robustbase: for MCD,
+    
+2. RobStatTM: for MVE
+
+3. gam,VGAM : For gam fitting
 
 1. The MD Classifier gives error rate for a given test dataset. It needs the following inputs:
 
