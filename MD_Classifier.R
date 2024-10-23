@@ -13,7 +13,7 @@ MD_classifier<-function(train.X,train.Y,test.X,test.Y,sigma_type)
    # train.X<- features of the training data.
    # train.Y<- class information of the training data.
    # test.X<-  features of the test data.
-   # test.Y<- class information of the training data.
+   # test.Y<- class information of the test data.
    # sigma_type <- This is the type of scatter matrix, that to be used.
    
 
