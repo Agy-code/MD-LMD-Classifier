@@ -54,7 +54,7 @@ options(warn=-1)
    # train.X<- features of the training data.
    # train.Y<- class information of the training data.
    # test.X<-  features of the test data.
-   # test.Y<- class information of the training data.
+   # test.Y<- class information of the test data.
    # sigma_type <- This is the type of variance matrix, that to be used.
    # If boot is TRUE, then it performs bootstrap samling to find optimal value of h, based on n.folds bootstrap samples.
    # If boot is FALSE, then it considers the given value of h (as specified by h_given) as the optimal.
@@ -68,7 +68,7 @@ if (boot==FALSE && is.null(h_given)) {
   }
 
 
-# Tranformation of the classes as {0,1,...,J}, particularly required for Binary classification:
+# Transformation of the classes as {0,1,...,J}, particularly required for Binary classification:
     
 train.Y<-as.numeric(as.factor(train.Y))-1
 test.Y<-as.numeric(as.factor(test.Y))-1
@@ -123,15 +123,14 @@ d<-ncol(train.X)
   
 if(boot){
 
-#To calculate the squared generalized Mahalanobis distance between
-# all pairs of rows in a data frame with respect to a covariance matrix.
+#To calculate the Mahalanobis distances between all pairs of rows in a data frame with respect to a covariance matrix.
 
    M<- lapply(g, function(j) sqrt(biotools::D2.dist(train.X,cov=inv_sigma[[j+1]],inverted=TRUE)))
 
 # List of the quantiles of the MD's:
   Q<-lapply(g, function(j) quantile(as.vector(M[[j+1]]),0.05))
 
-# starting the gird for h:
+
   h.start<-min(unlist(Q))/3
 
 # To find the range of h:
