@@ -15,7 +15,7 @@ The following libraries are needed:
 
     test.X<-  features of the test data.
 
-    test.Y<- class information of the training data.
+    test.Y<- class information of the test data.
 
     sigma_type <- This is the type of scatter matrix, that to be used. The possible choices are:
             'varcov' = usual variance matrix,
@@ -29,7 +29,7 @@ The following libraries are needed:
 
 (i) The LMD function calculates the Local Mahalanobis distances.It needs the following inputs:
 
-h<-tuning parameter (vector or real valued).
+h<-Localization parameter or the tuning parameter (vector or real valued).
 
 data<- a matrix or data frame such that the rows contain query points, for which LMD has to be found.
 
@@ -49,7 +49,7 @@ kern<-This is the kernel to be used, if not specified the Gaussian kernel will b
   
   test.X<-  features of the test data.
   
-  test.Y<- class information of the training data.
+  test.Y<- class information of the test data.
   
   sigma_type <- This is the type of variance matrix, that to be used.The possible choices are:
             'varcov' = usual variance matrix,
